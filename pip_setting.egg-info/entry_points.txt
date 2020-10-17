@@ -1,3 +1,0 @@
-[console_scripts]
-pip-setting = pip_setting:run
-
