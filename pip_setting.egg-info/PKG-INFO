@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pip-setting
-Version: 0.0.1
+Version: 0.0.2
 Summary: 快速设置pip镜像源的工具
 Home-page: https://github.com/13528080556/pip_setting
 Author: 丘家劲
@@ -10,6 +10,7 @@ Description: # 设置 pip 镜像源
         
         这是一个快速设置国内镜像源的工具，你可以使用它快速切换镜像源地址。
         目前支持
+        - 官方源
         - 阿里云源
         - 清华源
         - 豆瓣源
