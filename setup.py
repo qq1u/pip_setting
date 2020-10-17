@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(
-    name='pip-setting_test',
+    name='pip-setting',
     version='0.0.1',
     author='丘家劲',
     author_email='609799548@qq.com',
