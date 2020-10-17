@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: pip-setting
+Version: 0.0.1
+Summary: 快速设置pip镜像源的工具
+Home-page: https://github.com/13528080556/pip_setting
+Author: 丘家劲
+Author-email: 609799548@qq.com
+License: UNKNOWN
+Description: # 设置 pip 镜像源
+        
+        这是一个快速设置国内镜像源的工具，你可以使用它快速切换镜像源地址。
+        目前支持
+        - 阿里云源
+        - 清华源
+        - 豆瓣源
+        
+        ```
+        命令行直接输入 pip-setting , 根据提示继续操作
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
