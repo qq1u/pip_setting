@@ -5,9 +5,9 @@
 import os
 import sys
 import shutil
+import argparse
 
 WIN = sys.platform.startswith('win')
-
 mirrors = {
     '阿里云源': ['[global]', 'index-url = https://mirrors.aliyun.com/pypi/simple',
              '[install]', 'trusted-host=mirrors.aliyun.com'],
@@ -16,11 +16,11 @@ mirrors = {
     '豆瓣源': ['[global]', 'index-url = https://pypi.doubanio.com/simple',
             '[install]', 'trusted-host=pypi.doubanio.com']
 }
-
 user_home = os.path.expanduser('~')
 pip_dir_name, pip_file_name = ('pip', 'pip.ini') if WIN else ('.pip', 'pip.conf')
 pip_dir_path = os.path.join(user_home, pip_dir_name)
 pip_file_path = os.path.join(user_home, pip_dir_name, pip_file_name)
+dic = {'1': '阿里云源', '2': '清华源', '3': '豆瓣源'}
 
 
 def create_pip_file(mirror: str):
@@ -32,12 +32,9 @@ def create_pip_file(mirror: str):
     print('设置 %s 成功' % mirror)
 
 
-def run():
+def old():
     print('使用此工具可快速切换pip镜像源')
     print('0、官方源\n1、阿里源\n2、清华源\n3、豆瓣源\n4、退出')
-    dic = {
-        '1': '阿里云源', '2': '清华源', '3': '豆瓣源'
-    }
     while True:
         opt = input('请输入序号: ')
         if opt in ['0', '1', '2', '3', '4']:
@@ -49,6 +46,14 @@ def run():
             break
         else:
             print('不支持操作选项!!! 请输入0-4')
-    print('感谢您的使用~')
+    print('感谢您的使用~, 遇到问题请联系: 609799548@qq.com')
 
+
+def run():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-s', '--source')
+    if parser.parse_args().source == 'aliyun':
+        create_pip_file('阿里云源')
+    else:
+        old()
 
