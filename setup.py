@@ -18,8 +18,6 @@ setup(
         'console_scripts': [
             'pip-setting=pip_setting:run',
             'pip_setting=pip_setting:run',
-            'pip3-setting=pip_setting:run',
-            'pip3_setting=pip_setting:run'
         ]
     },
     packages=setuptools.find_packages(),
