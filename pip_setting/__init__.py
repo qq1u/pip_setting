@@ -20,13 +20,19 @@ pip_dir_path = os.path.join(user_home, pip_dir_name)
 pip_file_path = os.path.join(user_home, pip_dir_name, pip_file_name)
 
 
-def create_pip_file(mirror: str):
+def create_pip_file(mirror):
     if not os.path.exists(pip_dir_path):
         os.mkdir(pip_dir_path)
     with open(pip_file_path, 'w') as f:
         content = [item + '\n' for item in mirrors[mirror]]
         f.writelines(content)
-    print('设置成功' % mirror)
+    print('设置成功')
+
+
+def remote_pip():
+    if os.path.exists(pip_dir_path):
+        shutil.rmtree(pip_dir_path)
+    print('设置成功')
 
 
 def run():
@@ -35,6 +41,8 @@ def run():
     arg = parser.parse_args().source
     if arg in mirrors:
         create_pip_file(arg)
+    elif arg == 'pypi':
+        remote_pip()
     else:
         print('使用此工具可切换pip镜像源')
         print('0、官方源\n1、阿里源\n2、清华源\n3、豆瓣源\n4、退出')
@@ -44,10 +52,8 @@ def run():
                 if opt in '123':
                     create_pip_file(opt)
                 elif opt == '0':
-                    if os.path.exists(pip_dir_path):
-                        shutil.rmtree(pip_dir_path)
+                    remote_pip()
                 break
             else:
                 print('不支持操作选项! 请输入0-4')
-        print('感谢您的使用~, 遇到问题请联系: 609799548@qq.com')
 

@@ -21,3 +21,4 @@
 * aliyun: 阿里云源
 * qinghua: 清华源
 * douban: 豆瓣源
+* pypi: 官方源
