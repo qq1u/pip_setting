@@ -15,7 +15,7 @@
 #### 方式 2
 命令行输入
 - pip-setting -s aliyun
-- pip-setting -source aliyun
+- pip-setting --source aliyun
 
 支持选项
 * aliyun: 阿里云源
