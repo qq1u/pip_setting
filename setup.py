@@ -15,7 +15,7 @@ setup(
     license='MIT Licence',
     url='https://github.com/13528080556/pip_setting',
     package_data={
-        '': ['*.json']
+        '': ['mirrors.json']
     },
 
     entry_points={
