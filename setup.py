@@ -6,7 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='pip-setting',
-    version='0.0.8',
+    version='0.0.9',
     author='丘家劲',
     author_email='609799548@qq.com',
     description='快速设置pip镜像源的工具',
@@ -14,6 +14,10 @@ setup(
     long_description_content_type='text/markdown',
     license='MIT Licence',
     url='https://github.com/13528080556/pip_setting',
+    package_data={
+        '': ['*.json']
+    },
+
     entry_points={
         'console_scripts': [
             'pip-setting=pip_setting:run',
