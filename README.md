@@ -7,20 +7,14 @@
 - 清华源
 - 豆瓣源
 - 腾讯云源
+- 上海交大
 
 #### 方式 1
 ```
-命令行直接输入:pip-setting , 根据提示继续操作
+命令行直接输入: pip-setting , 根据提示继续操作
 ```
 
 #### 方式 2
 命令行输入
 - pip-setting -s 阿里云
 - pip-setting --source 阿里云
-
-支持选项
-* aliyun: 阿里云源
-* qinghua: 清华源
-* douban: 豆瓣源
-* pypi: 官方源
-* tencent: 腾讯云源
