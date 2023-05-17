@@ -14,5 +14,9 @@
     "腾讯云": {
         "global": "index-url = https://mirrors.cloud.tencent.com/pypi/simple",
         "install": "trusted-host=mirrors.cloud.tencent.com"
+    },
+    "上海交大": {
+        "global": "index-url = https://mirror.sjtu.edu.cn/pypi/web/simple",
+        "install": "trusted-host=mirror.sjtu.edu.cn"
     }
 }
