@@ -1,26 +1,8 @@
 {
-    "阿里云": {
-        "global": "index-url=https://mirrors.aliyun.com/pypi/simple",
-        "install": "trusted-host=mirrors.aliyun.com"
-    },
-    "清华": {
-        "global": "index-url=https://pypi.tuna.tsinghua.edu.cn/simple",
-        "install": "trusted-host=pypi.tuna.tsinghua.edu.cn"
-    },
-    "豆瓣": {
-        "global": "index-url=https://pypi.doubanio.com/simple",
-        "install": "trusted-host=pypi.doubanio.com"
-    },
-    "腾讯云": {
-        "global": "index-url=https://mirrors.cloud.tencent.com/pypi/simple",
-        "install": "trusted-host=mirrors.cloud.tencent.com"
-    },
-    "上海交大": {
-        "global": "index-url=https://mirror.sjtu.edu.cn/pypi/web/simple",
-        "install": "trusted-host=mirror.sjtu.edu.cn"
-    },
-    "华为云": {
-        "global": "index-url=https://repo.huaweicloud.com/repository/pypi/simple",
-        "install": "trusted-host=repo.huaweicloud.com"
-    }
+    "阿里云": "https://mirrors.aliyun.com/pypi/simple",
+    "清华": "https://pypi.tuna.tsinghua.edu.cn/simple",
+    "豆瓣": "https://pypi.doubanio.com/simple",
+    "腾讯云": "https://mirrors.cloud.tencent.com/pypi/simple",
+    "上海交大": "https://mirror.sjtu.edu.cn/pypi/web/simple",
+    "华为云": "https://repo.huaweicloud.com/repository/pypi/simple"
 }

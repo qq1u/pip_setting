@@ -3,20 +3,22 @@ import json
 import shutil
 import argparse
 from pathlib import Path
+from urllib.parse import urlparse
 
+UTF8 = "UTF8"
 WIN = sys.platform.startswith("win")
-with (Path(__file__).parent / "mirrors.json").open(encoding="utf8") as f:
+with (Path(__file__).parent / "mirrors.json").open(encoding=UTF8) as f:
     mirrors = json.load(f)
-
 pip = Path(f"~/{'pip/pip.ini' if WIN else '.pip/pip.conf'}").expanduser()
 pip_dir = pip.parent
+pip_dir.mkdir(exist_ok=True)
 
 
 def new_file(mirror):
-    if not pip_dir.exists():
-        pip_dir.mkdir()
-    with pip.open("w") as file:
-        file.write("\n".join([f"[{k}]\n{v}" for k, v in mirrors[mirror].items()]))
+    url = mirrors[mirror]
+    host = urlparse(url).hostname
+    with pip.open("w", encoding=UTF8) as fw:
+        fw.writelines([line + "\n" for line in ["[global]", f"index-url={url}", "[install]", f"trusted-host={host}"]])
     print("设置成功")
 
 
@@ -36,10 +38,7 @@ def run():
         remove_pip()
     else:
         options = ["官方", *mirrors, "退出"]
-        print(
-            "使用此工具可切换pip镜像源\n"
-            + "\n".join([f"{index}、{item}" for index, item in enumerate(options)])
-        )
+        print("使用此工具可切换pip镜像源\n" + "\n".join([f"{index}、{item}" for index, item in enumerate(options)]))
         while True:
             opt = input("请输入序号: ")
             if opt in tuple(map(str, range(len(options)))):
