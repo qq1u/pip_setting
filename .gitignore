@@ -6,3 +6,4 @@ venv/
 dist/
 .idea/
 build/
+pip_setting.egg-info
