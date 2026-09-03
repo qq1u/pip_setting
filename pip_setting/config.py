@@ -1,4 +1,4 @@
-"""配置文件编辑：pip.ini 用 configparser，uv.toml 按行精准编辑。"""
+"""配置文件编辑: pip.ini 用 configparser, uv.toml 按行精准编辑。"""
 import configparser
 from pathlib import Path
 
@@ -11,7 +11,7 @@ def _write(path, lines):
 
 
 def set_ini_keys(path: Path, updates):
-    """在 ini 文件里设置键值，updates 为 {小节: {键: 值}}；
+    """在 ini 文件里设置键值, updates 为 {小节: {键: 值}}
     文件由 configparser 标准化重写，注释不保留。"""
     parser = configparser.ConfigParser(interpolation=None)
     parser.read(path, encoding=UTF8)
@@ -48,7 +48,7 @@ def _default_line(lines):
 
 
 def set_uv_index(path: Path, url):
-    """把 url 设为 uv 默认源：改写原默认块的 url；无默认块则追加一个；
+    """把 url 设为 uv 默认源：改写原默认块的 url; 无默认块则追加一个;
     其余 index 块的 default 置 false。除这些键外原文件内容不动。"""
     lines = path.read_text(encoding=UTF8).splitlines() if path.exists() else []
     target = _default_line(lines)

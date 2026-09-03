@@ -15,7 +15,7 @@ uv = Path(f"~/{'AppData/Roaming/uv/uv.toml' if WIN else '.config/uv/uv.toml'}").
 
 
 def targets(target):
-    """实际写入的目标：显式指定就用指定值；all 时 uv 以检测为准。"""
+    """实际写入的目标: 显式指定就用指定值; all 时 uv 以检测为准。"""
     if target != "all":
         return [target]
     return ["pip"] + (["uv"] if shutil.which("uv") else [])
@@ -48,7 +48,7 @@ def run():
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--source")
     parser.add_argument("-p", "--target", choices=["pip", "uv", "all"], default="all",
-                        help="操作目标：pip、uv 或 all（默认 all，检测到 uv 时同步设置）")
+                        help="操作目标: pip、uv 或 all (默认 all, 检测到 uv 时同步设置）")
     arg = parser.parse_args()
     if arg.source in mirrors:
         set_mirror(arg.source, arg.target)

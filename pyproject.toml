@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pip-setting"
+version = "1.1.0"
+authors = [
+    { name = "Hugh", email = "609799548@qq.com" },
+]
+description = "快速设置pip镜像源的工具"
+readme = "README.md"
+requires-python = ">=3.6"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/qq1u/pip_setting"
+Issues = "https://github.com/qq1u/pip_setting/issues"
+
+[project.scripts]
+pip-setting = "pip_setting:run"
+pip_setting = "pip_setting:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pip_setting"]
