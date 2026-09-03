@@ -19,3 +19,9 @@
 命令行输入
 - pip-setting -s 阿里云
 - pip-setting --source 阿里云
+
+#### 操作目标
+默认同时设置 pip 和 uv（检测到 uv 时）；用 `-p` 指定：
+- pip-setting -p pip -s 阿里云   （只设置 pip）
+- pip-setting -p uv  -s 阿里云   （只设置 uv）
+- pip-setting -p all -s 阿里云   （默认，同时设置）

@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setup(
     name="pip-setting",
-    version="1.0.2",
+    version="1.1.0",
     author="Hugh",
     author_email="609799548@qq.com",
     description="快速设置pip镜像源的工具",
